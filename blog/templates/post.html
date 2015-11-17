@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block sub_template %}
+
+<body>
+<div class="menu">
+    <div class="content">
+        <ul>
+            <li class="selected"> <a href="/">Blogs</a> </li>
+            <li> <a href="/archive/">Archive</a> </li>
+            <li> <a href="/gallery/">Gallery</a> </li>
+            <li> <a href="/about/">About</a> </li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="content">
+        <h1>{{blog.title}}</h1>
+    </div>
+</div>
+<div class="main">
+    <div class="content"> 
+        <div class="post">
+            <!--escape 因为这里传入的body是后台admin通过tinyMCE富文本编辑器传来的html，这里防止转移造成在博文里直接显示html标签-->
+            {% autoescape off %}
+            {{blog.body}}
+            {% endautoescape %}
+        </div>
+        <div class="meta">
+            <p class="time">
+                <a><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{blog.create_time|date:"M d, Y"}}</a>
+                <a style="float:right"><i class="fa fa-eye"></i> {{blog.counts}}</a>
+            </p>
+            {% if blog.contain_mp3 %}
+            <p class="project">
+                <a>
+                    <i class="fa fa-music"></i>&nbsp;&nbsp;{{blog.mp3_singer}}&nbsp;&nbsp;- {{blog.mp3_name}}&nbsp;&nbsp;
+                    <button id="play_botton" onclick="clicks()" class="button button-tiny button-plain button-borderless"><i id="mp3_botton" class="fa fa-play"></i></button>
+                    <audio id="audio" class="pause" src="" loop="loop"/>
+                </a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!--先不播放-->
+<script>
+function clicks() {
+    var audio = document.getElementById("audio");
+    var play_botton = document.getElementById("play_botton");
+    if ($("#audio").hasClass("pause")) {
+        $("#audio").addClass("playing").removeClass("pause");
+        $("#mp3_botton").addClass("fa-pause").removeClass("fa-play");
+        if(audio.currentSrc == "")
+        {
+            audio.src = "{{blog.mp3_url}}";
+        }
+        audio.play();//开始播放
+    } else { //正在播放
+        $("#audio").addClass("pause").removeClass("playing");
+        $("#mp3_botton").addClass("fa-play").removeClass("fa-pause");
+        audio.pause();
+    }
+}
+</script>
+
+<style>
+.button-borderless.button-plain {
+  color: #4499EE;
+}
+</style>
+
+{% endblock %}
+

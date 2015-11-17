@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block sub_template %}
+<body>
+<div class="menu">
+    <div class="content">
+        <ul>
+            <li><a href="/">Blogs</a></li>
+            <li><a href="/archive/">Archive</a></li>
+            <li><a href="/gallery/">Moments</a></li>
+            <li class="selected"><a href="/about/">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="content">
+        <h1>About</h1>
+    </div>
+</div>
+
+<div class="main">
+    <div class="content">
+        <div class="post single last">
+        <p>Hi, 欢迎来自
+            {% if client_city %}
+                <a style="color: #D2892A; font-weight: bold;">{{client_city}}</a>
+            {% else %}
+                未知地点
+            {% endif %}
+            的同学。
+        </p>
+        <p style="text-indent:2em;">
+            这是我的个人博客，随时更新自己瞎写的一些话，以及作为一个摄影入门学徒拍摄的一些照片。
+        </p>
+        <br/>
+        <h4>关于本网站</h4>
+        <p class="tech_about" style="text-indent:2em;">
+            该网站后端由基于<a href="https://www.python.org/"><em> Python </em></a>的<a href="https://www.djangoproject.com/"><em> Django </em></a>框架开发。因为本人对前端技术了解较少，所以基本的html和css参考了某位罗马尼亚大神<a href="https://github.com/lucianmarin/lm"><em> Github </em></a>的部分代码。此外，还用到了<a href="http://fortawesome.github.io/Font-Awesome/"><em> Font Awesome </em></a>和<a href="http://www.bootcss.com/p/buttons/"><em> Bottons </em></a>这两个制作精美的开源库，用于页面中的部分图标和按钮，在此也强烈推荐。本站点目前托管在新浪 PaaS 平台<a href="http://sae.sina.com.cn"><em> SAE </em></a> 上。
+        </p>
+        <p style="text-indent:2em;">
+            对包括但不限于以上开源代码的开发者表示衷心感谢。
+        </p>
+        <br/>
+        <h4>联系本人</h4>
+        <p style="text-indent:2em;">
+            无论您对网站的开发技术（尤其是Django），或是对博客里的照片有兴趣，随时欢迎来信指教探讨，发送邮件请戳页面底部标签。
+        </p>
+        <br/>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

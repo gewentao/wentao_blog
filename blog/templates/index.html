@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block sub_template %}
+<body>
+<div class="menu">
+    <div class="content">
+        <ul>
+            <li class="selected"> <a href="/">Blogs</a> </li>
+            <li> <a href="/archive/">Archive</a> </li>
+            <li> <a href="/gallery/">Moments</a> </li>
+            <li> <a href="/about/">About</a> </li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="content">
+        <h1>Blogs</h1>
+    </div>
+</div>
+<div class="main">
+    <div class="content">
+        <ul class="list front">
+		{% for page_post in page_posts %}
+			<li>
+                <h2><a href="/blog/post?id={{page_post.id}}">{{page_post.title}}</a></h2>
+                <p>
+				{% autoescape off %}
+				{{ page_post.abstract }}
+				{% endautoescape %}
+				</p>
+                <p class="date">{{page_post.create_time|date:"M d, Y"}}</p>
+            </li>
+		{% empty %}
+		{% endfor %}
+        </ul>
+
+        <hr noshade size=2></hr>
+        <!-- Pager -->
+        <div class="pagination">
+            <span class="step-links">
+    		<a class="all_page">共{{page_num}}页 </a>
+    		{% if page_posts.has_previous %}
+                <a href="?page={{ page_posts.previous_page_number }}" class="unselected_page">上一页</a>
+            {% else %}
+                <span class='empty'></span>
+            {% endif %}
+
+            {% for page_num in page_list %}
+                <!--判断当前循环到的page_num是不是这个页面展示的页page_posts的number，是就高亮显示，表示用户选取的是这一页-->
+                {% if page_posts.number == page_num %}
+                    <a href="?page={{page_num}}" class="selected_page">{{page_num}}</a>
+                {% else %}
+                    <a href="?page={{page_num}}" class="unselected_page">{{page_num}}</a>
+                {% endif %}
+                <a> </a>
+            {% empty %}
+            {% endfor %}
+
+            {% if page_posts.has_next %}
+                <a href="?page={{ page_posts.next_page_number }}" class="unselected_page">下一页</a>
+            {% else %}
+                <span class='empty'></span>                             
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

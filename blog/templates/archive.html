@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block sub_template %}
+<body>
+<div class="menu">
+    <div class="content">
+        <ul>
+            <li><a href="/">Blogs</a></li>
+            <li class="selected"> <a href="/archive/">Archive</a></li>
+            <li><a href="/gallery/">Moments</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="content">
+        <h1>Archive</h1>
+    </div>
+</div>
+<div class="main">
+<div class="content">
+<ul class="list archive">
+    {% for list_this_year in list_by_year %}
+        <li>
+        <h2>{{list_this_year.this_year}}</h2>
+        <ul>
+            {% for post in list_this_year.blogs_this_year %}    
+            <li> 
+                <b>{{post.create_time|date:"M"}}</b> <i>{{post.create_time|date:"d"}}</i> <a href="/blog/post?id={{post.id}}">{{post.title}}</a> 
+                {% if post.contain_img %}
+                <sup title="Images">img</sup>
+                {% endif %}
+                {% if post.contain_mp3 %}
+                <sup title="Images">mp3</sup>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </li>
+        </ul>
+    {% endfor %}
+        <!--li> <b>Jul</b> <i>11</i> <a href="/archive/airplane.html">Plane and Simple</a> <sup title="Images">img</sup> </li-->
+        <!--搞个mp3和img的角标-->
+</div>
+</div>
+{% endblock %} 

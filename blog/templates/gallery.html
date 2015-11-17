@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block sub_template %}
+<body>
+<div class="menu">
+    <div class="content">
+        <ul>
+            <li><a href="/">Blogs</a></li>
+            <li><a href="/archive/">Archive</a></li>
+            <li class="selected"><a href="/gallery/">Moments</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="content">
+        <h1>Moments</h1>
+    </div>
+</div>
+
+<div class="main">
+    <div class="content">
+        <div class="post">
+            {% for photo in page_photos%}
+                <p><img src="/static/gallery_photos/{{photo.file_name}}" width="480" height="480" /></p>
+                <p class="caption" style="margin:0">
+                    <!--a class="photo_abstract">{{photo.abstract}}  </a-->
+                    <a class="photo_time"><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{photo.create_time|date:"M d, Y"}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a class="photo_position"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{photo.position}}  </a>
+                    <!--a class="photo_process"><i class="fa fa-heart-o">&nbsp;{{photo.view_count}}&nbsp;&nbsp;&nbsp;</i><i class="fa fa-share-alt"></i></a-->
+                </p>
+                <p class="caption" style="margin:0; display:inline">
+                    <!--a class="photo_abstract">{{photo.abstract}}  </a-->
+                    <a class="photo_camera"><i class="fa fa-camera"></i>&nbsp;&nbsp;{{photo.camera}} | {{photo.lens}} &nbsp;&nbsp;</a>
+                </p>
+                <p class="caption" style="margin:0; display:inline">
+                    <a class="photo_exif"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;{{photo.exif}} </a>
+                </p>
+                {% if not forloop.last %} <!--not the last photo in current page-->
+                    <hr class="photo_line" style="border : 1px dashed #DDDDDD;" />
+                {% else %} 
+                    <br/>
+                {% endif %}
+            {% empty %}
+            {% endfor %}
+        </div>
+
+        <hr noshade size=2></hr>
+        <!-- Pager -->
+        <div class="pagination">
+            <span class="step-links">
+            <a class="all_page">共{{page_num}}页 </a>
+            {% if page_photos.has_previous %}
+                <a href="?page={{ page_photos.previous_page_number }}" class="unselected_page">上一页</a>
+            {% else %}
+                <span class='empty'></span>
+            {% endif %}
+
+            {% for page_num in page_list %}
+                <!--判断当前循环到的page_num是不是这个页面展示的页page_posts的number，是就高亮显示，表示用户选取的是这一页-->
+                {% if page_photos.number == page_num %}
+                    <a href="?page={{page_num}}" class="selected_page">{{page_num}}</a>
+                {% else %}
+                    <a href="?page={{page_num}}" class="unselected_page">{{page_num}}</a>
+                {% endif %}
+                <a> </a>
+            {% empty %}
+            {% endfor %}
+
+            {% if page_photos.has_next %}
+                <a href="?page={{ page_photos.next_page_number }}" class="unselected_page">下一页</a>
+            {% else %}
+                <span class='empty'></span>                             
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
