@@ -35,11 +35,11 @@ class BlogVisit(models.Model):
 
 class BlogAdmin(admin.ModelAdmin):
         list_display = ('title','create_time')
-        class Media:
-		js = (
-				'/media/js/tiny_mce/tiny_mce.js',
-				'/media/js/textareas.js',
-		     )
+      #  class Media:
+#		js = (
+#				'/media/js/tiny_mce/tiny_mce.js',
+#				'/media/js/textareas.js',
+#		     )
 
 class GalleryAdmin(admin.ModelAdmin):
         list_display = ('title','create_time')

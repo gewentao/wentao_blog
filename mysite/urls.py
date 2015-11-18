@@ -11,7 +11,7 @@ from blog.views import aboutPage
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':'media'}),
+#    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':'media'}),
     url(r'^blog_admin', include(admin.site.urls)),
     url(r'^$',mainPage),
     url(r'^archive/$',archivePage),

@@ -8,7 +8,7 @@ ADMINS = (
 )
 
 USER = 'root'
-PASSWORD = 'caiyueying25'
+PASSWORD = '' #cyy
 HOST = '127.0.0.1'
 PORT = '3306'
 
@@ -137,7 +137,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-	'blog',
+    'blog',
 )
 
 # A sample logging configuration. The only tangible logging
