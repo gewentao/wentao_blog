@@ -1,3 +1,4 @@
 static
-read_me.txt
 config.yaml
+*.pyc
+*.txt
