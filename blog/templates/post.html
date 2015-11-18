@@ -2,6 +2,8 @@
 
 {% block sub_template %}
 
+{% load markdown_deux_tags %}
+
 <body>
 <div class="menu">
     <div class="content">
@@ -23,7 +25,7 @@
         <div class="post">
             <!--escape 因为这里传入的body是后台admin通过tinyMCE富文本编辑器传来的html，这里防止转移造成在博文里直接显示html标签-->
             {% autoescape off %}
-            {{blog.body}}
+            {{blog.body|markdown}}
             {% endautoescape %}
         </div>
         <div class="meta">
