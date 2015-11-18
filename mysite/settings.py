@@ -80,8 +80,10 @@ STATIC_ROOT = ''
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+BASE_DIR = os.getcwd()
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static"),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -138,6 +140,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'blog',
+    'markdown_deux',
 )
 
 # A sample logging configuration. The only tangible logging
