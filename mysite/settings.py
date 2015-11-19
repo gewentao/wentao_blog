@@ -1,6 +1,6 @@
 # Django settings for mysite project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -8,7 +8,7 @@ ADMINS = (
 )
 
 USER = 'root'
-PASSWORD = 'caiyueying25' #cyy
+PASSWORD = '' #cyy
 HOST = '127.0.0.1'
 PORT = '3306'
 
