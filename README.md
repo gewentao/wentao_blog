@@ -9,6 +9,6 @@ source code of my personal blog implemented in Django
 * ~~how to generate summary of a blog~~
 * add comment feature
 * add config file to replace hard code
-* add a model for about page instead of hard code
+* ~~add a model for about page instead of hard code~~
 * 404 page
 * add code and learning page
