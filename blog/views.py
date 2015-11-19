@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from blog.models import BlogPost
 from blog.models import GalleryPost
 from blog.models import BlogVisit
+from blog.models import About
 from django.http import Http404
 from django.core.paginator import Paginator
 from django.core.paginator import PageNotAnInteger
@@ -71,7 +72,11 @@ def galleryPage(request):
 def aboutPage(request):
     client_ip = request.META['REMOTE_ADDR']
     city = get_city_by_ip(client_ip)
-    return render_to_response('about.html',{'client_city':city})
+    about = About()
+    abouts = About.objects.all().order_by('-update_time')
+    if len(abouts) > 0:
+        about = abouts[0]
+    return render_to_response('about.html',{'client_city':city, 'about':about})
 
 def postPage(request):
     if request.method == 'GET':

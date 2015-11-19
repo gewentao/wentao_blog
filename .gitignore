@@ -2,3 +2,4 @@ static
 config.yaml
 *.pyc
 *.txt
+mysite/settings.py
