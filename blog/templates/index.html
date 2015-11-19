@@ -25,7 +25,7 @@
                 <h2><a href="/blog/post?id={{page_post.id}}">{{page_post.title}}</a></h2>
                 <p>
 				{% autoescape off %}
-				{{ page_post.abstract }}
+				{{ page_post.body|truncatechars:80 }}
 				{% endautoescape %}
 				</p>
                 <p class="date">{{page_post.create_time|date:"M d, Y"}}</p>

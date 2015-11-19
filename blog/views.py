@@ -71,7 +71,6 @@ def galleryPage(request):
 def aboutPage(request):
     client_ip = request.META['REMOTE_ADDR']
     city = get_city_by_ip(client_ip)
-    city = 'test'
     return render_to_response('about.html',{'client_city':city})
 
 def postPage(request):

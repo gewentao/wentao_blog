@@ -23,9 +23,9 @@ class GalleryPost(models.Model):
 	file_name = models.CharField(max_length=500)#eg: test.jpg  the file is saved in /static/gallery_photos/
 	view_count = models.IntegerField(default=0)
 	create_time = models.DateTimeField()
-	camera = models.CharField(max_length=50)
-	lens = models.CharField(max_length=50)
-	exif = models.CharField(max_length=100)
+	camera = models.CharField(max_length=50, default='Nikon D90')
+	lens = models.CharField(max_length=50, default='18.0-105.0 mm | f/3.5-5.6')
+	exif = models.CharField(max_length=100, default='xx.x mm | Fx | xx/xx sec | ISO xxxx | 0 EV')
 	position = models.CharField(max_length=100)
 
 class BlogVisit(models.Model):
