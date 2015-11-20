@@ -71,7 +71,10 @@ def galleryPage(request):
 
 def aboutPage(request):
     client_ip = request.META['REMOTE_ADDR']
-    city = get_city_by_ip(client_ip)
+    location = get_city_by_ip(client_ip)
+    city = 'unknown city'
+    if location != {}:
+        city = location['city']
     about = About()
     abouts = About.objects.all().order_by('-update_time')
     if len(abouts) > 0:
