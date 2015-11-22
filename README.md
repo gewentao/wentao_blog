@@ -10,6 +10,6 @@ source code of my personal blog implemented in Django
 * add comment feature
 * add config file to replace hard code
 * ~~add a model for about page instead of hard code~~
-* 404 page
+* ~~404 page~~
 * add code and learning page
-* update city API
+* ~~update city API~~
