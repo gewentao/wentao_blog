@@ -1,0 +1,401 @@
+* {
+	margin: 0;
+	padding: 0
+}
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+ul {
+	list-style: none
+}
+a {
+	color: black;
+	text-decoration: none;
+	transition: color 0.2s
+}
+b, i, u {
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none
+}
+sup {
+	line-height: 0
+}
+img {
+	display: block
+}
+body {
+	background-color: white;
+	color: black;
+	/*font: 15px/20px "Seravek", "Roboto", "Segoe UI", "Ubuntu", Helvetica, Arial, sans-serif;*/
+	font: 15px/20px Helvetica,Arial,sans-serif;
+	position: relative;
+	cursor: default;
+	text-rendering: optimizeLegibility
+}
+code {
+	font-family: "Share Tech Mono", "Menlo", "Consolas", "Ubuntu Mono", "Monospace", monospace;
+	letter-spacing: 1px
+}
+h1 {
+	font-size: 30px;
+	font-weight: normal;
+	letter-spacing: -1px;
+	white-space: nowrap;
+	overflow: hidden
+}
+h2 {
+	font-size: 20px
+}
+h3 {
+	font-size: 17px
+}
+a.selected_page {
+	font-size: 13px;
+	color: black;
+	text-decoration: none;
+	transition: color 0.2s
+}
+a.unselected_page, a.all_page{
+	font-size: 13px;
+	color: #AAAAAA;
+	text-decoration: none;
+	transition: color 0.2s
+}
+.content {
+	width: 87.5%;
+	max-width: 512px;
+	margin: 0 auto
+}
+.menu {
+	height: 30px;
+	line-height: 30px;
+	padding-top: 20px
+}
+.menu ul {
+	overflow: hidden
+}
+.menu li {
+	display: block;
+	float: left;
+	margin-right: 15px
+}
+.menu li:last-child {
+	margin-right: 0
+}
+.menu a {
+	display: block;
+	color: gray
+}
+.menu li.selected a {
+	/*color: lightseagreen;*/
+	color: #2ABFFF;
+	border-bottom: gray 5px solid
+}
+.header {
+	background-color: silver;
+	color: white;
+	line-height: 60px;
+	height: 60px;
+	padding-top: 30px
+}
+.main {
+	padding: 10px 0
+}
+.adsbygoogle {
+	display: block;
+	width: 468px;
+	height: 60px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	margin-left: -3px
+}
+.footer {
+	margin-top: 15px;
+	font-size: 14px;
+	color: silver;
+	text-align: right;
+	padding-bottom: 20px
+}
+.footer a {
+	color: gray
+}
+.footer a:hover {
+	color: #FF9B4A
+}
+.list li {
+	margin-bottom: 20px
+}
+.list li:last-child {
+	margin-bottom: 0
+}
+.list h2 {
+	margin: 10px 0
+}
+.list h2 a:hover {
+	color: #FF9B4A
+}
+.list p {
+	margin: 10px 0
+}
+.list p a {
+	color: lightseagreen
+}
+.list p a:hover {
+	color: #FF9B4A
+}
+.list .date {
+	color: gray
+}
+.list .quote {
+	color: gray
+}
+.list .project {
+	margin: 5px 0;
+	color: silver
+}
+.list .project.first {
+	margin-top: 10px
+}
+.list .project img {
+	float: left;
+	padding: 2px;
+	margin-right: 10px
+}
+.list .project i {
+	color: gray
+}
+.list .grid img {
+	width: 100%;
+	height: auto;
+	margin-top: 1px
+}
+.list .grid img:first-child {
+	margin-top: 0
+}
+.list li ul {
+	margin-top: 10px
+}
+.list li ul li {
+	margin-top: 5px;
+	margin-bottom: 0;
+	white-space: nowrap;
+	overflow: hidden
+}
+.list li ul li a {
+	color: black
+}
+.list li ul li a:hover {
+	color: #FF9B4A
+}
+.list li ul li b, .list li ul li i {
+	float: left;
+	width: 40px;
+	color: silver
+}
+.list li ul li span {
+	color: silver
+}
+.list li ul li sup {
+	font-size: 8px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: silver
+}
+.post img {
+	width: 100%;
+	height: auto
+}
+.post p, .post h4 {
+	margin: 10px 0
+}
+.post p:last-child, .post h4:last-child {
+	margin-bottom: 0
+}
+
+.post ul, .post ol {
+	margin-bottom: 10px;
+	margin-left: 40px
+}
+.post ul li, .post ol li {
+	margin-bottom: 5px
+}
+.post ul {
+	list-style: square
+}
+.post blockquote {
+	/*padding: 10px 15px;*/
+	margin-bottom: 30px;
+	margin-top: 30px;
+	/*background-color: whitesmoke;*/
+	margin-left: 40px;
+	margin-right:40px;
+	position: relative;
+	color: #848080;
+	line-height:15px;
+	font-style:italic
+
+}
+.post blockquote:before {
+	content: open-quote;
+	font-size: 45px;
+	position: absolute;
+	top: 10px;
+	left: -40px;
+	color: coral
+}
+.post blockquote:after {
+	content: close-quote;
+	visibility: hidden;
+	position: absolute
+}
+.post .caption {
+	font-size: 12px;
+	color: gray
+}
+
+
+a.photo_exif, a.photo_process {
+	float: right;
+	color: gray;
+}
+a.photo_abstract, a.photo_position, a.photo_time, a.photo_view, a.photo_camera{
+	color: gray;
+}
+.post .highlight {
+	background-color: whitesmoke;
+	color: gray;
+	padding: 5px 15px;
+	font-size: 14px;
+	margin: 10px 0;
+	border-left: gainsboro 5px solid
+}
+.post .highlight pre {
+	white-space: pre-wrap
+}
+.grid {
+	overflow: hidden
+}
+.grid img.one, .grid img.two {
+	width: 50%;
+	width: calc(50% - 1px);
+	height: auto;
+	float: left;
+	transition: width 0.2s
+}
+.grid img.one.large {
+	width: 100%
+}
+.grid img.two {
+	float: right
+}
+.grid img.ten {
+	width: 100%;
+	height: auto;
+	padding-top: 2px
+}
+.detail {
+	color: lightseagreen;
+	font-size: 14px;
+	padding: 10px 0;
+	overflow: hidden
+}
+.detail b {
+	margin: -10px 0;
+	padding: 5px 0;
+	border-top: coral 5px solid;
+	border-bottom: white 5px solid;
+	display: block;
+	float: left;
+	margin-right: 20px;
+	color: gray
+}
+.buttons {
+	overflow: hidden;
+	height: 30px;
+	margin: 20px 0
+}
+.buttons li {
+	display: block;
+	float: left
+}
+.buttons a {
+	background-color: white;
+	padding: 5px 10px;
+	color: lightseagreen;
+	display: block;
+	float: left;
+	box-shadow: inset 0 -1px 0 whitesmoke;
+	transition: box-shadow 0.2s
+}
+.buttons a:hover {
+	box-shadow: inset 0 -1px 0 lightseagreen
+}
+.buttons a sup {
+	color: coral
+}
+.meta {
+	border-top: whitesmoke 2px solid;
+	margin-top: 14px;
+	padding-top: 14px;
+	color: silver;
+	font-size: 14px
+}
+.meta b {
+	text-transform: capitalize
+}
+.meta a {
+	color: gray
+}
+.handle:after {
+	content: " at ";
+	color: silver
+}
+.domain:after {
+	content: " dot ";
+	color: silver
+}
+.social_network li {
+	float: left;
+	list-style:none;
+	padding:0;
+	margin:0
+}
+.tech_about a{
+	color: gray;
+	font-weight: 550; 
+}
+.tech_about a:hover{
+	color: #FF9B4A;
+}
+.pagination a:not(.all_page):hover{
+	color: #FF9B4A;
+}
+
+
+@media (max-device-width: 600px) {
+.adsbygoogle {
+	display: none
+}
+/*当屏幕变小的时候，把这camera和exif的a标签设为block表示每个a标签占一行*/
+a.photo_camera{
+	display: block;
+	color: gray;
+}
+a.photo_exif, a.photo_process {
+	display: block;
+	float: left;
+	color: gray;
+}
+hr.photo_line {
+	margin-top: 1.5em
+}
+.foot_word, .foot_social{
+	width: 100%;
+	float: right;
+}
+.social_network{
+	float: right;
+}
+}
