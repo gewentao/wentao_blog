@@ -1,4 +1,11 @@
-static
+static/admin
+static/bottons
+static/font-awesome
+static/gallery_photos
+static/jquery
+static/mp3
+static/title_icon
+static/*.png
 config.yaml
 *.pyc
 *.txt
