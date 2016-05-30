@@ -9,4 +9,6 @@ RUN pip install -r requirements.txt
 ADD . /code/
 
 ADD run.sh /code/
+RUN chmod 777 run.sh
+EXPOSE 80
 CMD ["/bin/sh", "run.sh"]
