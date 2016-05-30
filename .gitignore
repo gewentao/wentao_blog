@@ -8,5 +8,4 @@ static/title_icon
 static/*.png
 config.yaml
 *.pyc
-*.txt
 mysite/settings.py
