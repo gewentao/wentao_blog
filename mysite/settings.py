@@ -7,31 +7,18 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
-USER = 'root'
-PASSWORD = '' #cyy
-HOST = '127.0.0.1'
-PORT = '3306'
-
-
 import os
-
-if 'SERVER_SOFTWARE' in os.environ:
-		import sae.const
-		USER = sae.const.MYSQL_USER
-		PASSWORD = sae.const.MYSQL_PASS
-		HOST = sae.const.MYSQL_HOST
-		PORT = sae.const.MYSQL_PORT
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'app_wentao',                      # Or path to database file if using sqlite3.
-        'USER': USER,                      # Not used with sqlite3.
-        'PASSWORD': PASSWORD,                  # Not used with sqlite3.
-        'HOST': HOST,                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': PORT,                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'django',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'mysql',                  # Not used with sqlite3.
+        'HOST': 'db',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': 3360,                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 

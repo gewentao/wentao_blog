@@ -1,1 +1,12 @@
-FROM daocloud.io/django:onbuild
+FROM python:2.7
+MAINTAINER Ted Ge <gewentao@outlook.com>
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /code
+WODIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
+
+ADD run.sh /code/
+CMD ["/bin/sh", "run.sh"]
