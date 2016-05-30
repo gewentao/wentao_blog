@@ -11,14 +11,20 @@ import os
 
 MANAGERS = ADMINS
 
+DB_NAME = os.getenv('MYSQL_INSTANCE_NAME')
+DB_USER = os.getenv('MYSQL_USERNAME')
+DB_PASSWORD = os.getenv('MYSQL_PASSWORD')
+DB_HOST = os.getenv('MYSQL_PORT')
+DB_PORT = os.getenv('MYSQL_PORT_3306_TCP_PORT')
+
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'django',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'mysql',                  # Not used with sqlite3.
-        'HOST': 'db',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': 3360,                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DB_NAME,                      # Or path to database file if using sqlite3.
+        'USER': DB_USER,                      # Not used with sqlite3.
+        'PASSWORD': DB_PASSWORD,                  # Not used with sqlite3.
+        'HOST': DB_HOST,                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': DB_PORT,                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
