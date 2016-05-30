@@ -3,7 +3,7 @@ MAINTAINER Ted Ge <gewentao@outlook.com>
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /code
-WODIR /code
+WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
